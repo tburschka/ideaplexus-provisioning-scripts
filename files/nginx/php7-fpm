@@ -1,0 +1,9 @@
+location ~ .*\.(php)?$ {
+    fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+    fastcgi_keep_conn on;
+    fastcgi_split_path_info ^(.+\.php)(/.*)$;
+    include fastcgi_params;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    fastcgi_param HTTPS off;
+    fastcgi_param PHP_ADMIN_VALUE "open_basedir=none";
+}
