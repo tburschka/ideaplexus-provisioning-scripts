@@ -9,3 +9,9 @@ wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | apt-key
 apt-get update
 
 apt-get -y install postgresql-9.5-postgis-2.2 postgresql-contrib-9.5
+
+# allow any connection
+echo "host all all 0.0.0.0/0 trust" >> etc/postgresql/9.5/main/pg_hba.conf
+echo "listen_addresses = '*'" >> /etc/postgresql/9.5/main/postgresql.conf
+
+service postgresql restart
