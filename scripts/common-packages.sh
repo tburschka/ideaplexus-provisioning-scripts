@@ -2,4 +2,9 @@
 
 echo "common-packages" >> /tmp/provisioning
 
-apt-get -y install ca-certificates build-essential software-properties-common
+apt-get -y install \
+    build-essential \
+    apt-transport-https \
+    ca-certificates \
+    software-properties-common \
+    curl
