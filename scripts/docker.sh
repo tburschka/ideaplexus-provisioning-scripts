@@ -28,4 +28,6 @@ apt-get update
 
 apt-get -y install docker-ce
 
+gpasswd -a vagrant docker
+
 systemctl start docker
